@@ -1,9 +1,10 @@
-const express = require('express');
+const express=require('express');
 
-const { InfoController } = require('../../controllers');
+const router=express.Router();
 
-const router = express.Router();
 
-router.get('/info', InfoController.info);
+const blogRoutes =require('./blog-routes');
 
-module.exports = router;
+router.use('/blogs',blogRoutes);
+
+module.exports=router;
